@@ -261,15 +261,25 @@ namespace FishFeast
 		{
 			string StringScore = PlayerScore.ToString();
 			int x = 180;
-			int scoreDigit = 0;
+			int digit = 0;
+			List<int> scoreDigits = new List<int>();
+			int i = 0;
 			
 			for (int displayScore = PlayerScore; displayScore > 0; displayScore /= 10)
 			{
-				scoreDigit = displayScore % 10;
-				sfcMain.Blit(sfcNumber[scoreDigit], new Point(x, 708));
+				digit = displayScore % 10;
+				scoreDigits.Add(digit);
+				i++;
+			}
+				
+			
+			for (i = scoreDigits.Count - 1 ;i > -1; i--) 
+			{
+				digit = scoreDigits[i];
+				sfcMain.Blit(sfcNumber[digit], new Point(x, 708));
 				x += 60;
 			}
-			
+			scoreDigits.Clear();
 		}
 	}
 }
