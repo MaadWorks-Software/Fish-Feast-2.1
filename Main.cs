@@ -57,6 +57,9 @@ namespace FishFeast
 				
 		public static void Main(string[] args)
 		{
+			
+			// Setup all graphics and windows
+			// then run it!
 			sfcMain = Video.SetVideoMode(1024, 768);
 			sfcBackground = new Surface("media/background.jpg");
 			sfcLogo = new Surface("media/logo.png");
