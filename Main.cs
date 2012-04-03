@@ -251,6 +251,9 @@ namespace FishFeast
 		
 		}
 		
+		/// <summary>
+		/// TODO: Refactor using int and mod only!!
+		/// </summary>
 		static void DoScore() 
 		{
 			string StringScore = PlayerScore.ToString();
