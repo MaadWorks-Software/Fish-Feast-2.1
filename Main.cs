@@ -252,21 +252,17 @@ namespace FishFeast
 		}
 		
 		/// <summary>
-		/// TODO: Refactor using int and mod only!!
+		/// Displays the score based on the player score.
 		/// </summary>
 		static void DoScore() 
 		{
 			string StringScore = PlayerScore.ToString();
 			int x = 180;
+			int scoreDigit = 0;
 			
-			if (PlayerScore == 0) StringScore = "0";
-			
-			for (int i = 0; i < StringScore.Length; i++)
+			for (int displayScore = PlayerScore; displayScore > 0; scoreDigit = displayScore % 10, displayScore /= 10)
 			{
-				string num = Char.ConvertFromUtf32(Convert.ToInt32(StringScore[i]));
-				int y = int.Parse(num);
-				Console.WriteLine("debug: "+ y);
-				sfcMain.Blit(sfcNumber[y], new Point(x, 708));
+				sfcMain.Blit(sfcNumber[scoreDigit], new Point(x, 708));
 				x += 60;
 			}
 			
