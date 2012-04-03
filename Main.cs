@@ -260,8 +260,9 @@ namespace FishFeast
 			int x = 180;
 			int scoreDigit = 0;
 			
-			for (int displayScore = PlayerScore; displayScore > 0; scoreDigit = displayScore % 10, displayScore /= 10)
+			for (int displayScore = PlayerScore; displayScore > 0; displayScore /= 10)
 			{
+				scoreDigit = displayScore % 10;
 				sfcMain.Blit(sfcNumber[scoreDigit], new Point(x, 708));
 				x += 60;
 			}
