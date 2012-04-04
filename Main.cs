@@ -46,7 +46,7 @@ namespace FishFeast
 	//	static List<Surface> sfcFish = new List<Surface>();
 		static List<Surface> sfcFishR = new List<Surface>(); //Going Left to Right or facing right
 		static List<Surface> sfcFishL = new List<Surface>(); //Going right to left or facing left
-		static List<Surface> sfcNumber = new List<Surface>();
+		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
 		
 		static int PlayerFish = 1;
 		static Point PlayerPos = new Point(256, 512);
