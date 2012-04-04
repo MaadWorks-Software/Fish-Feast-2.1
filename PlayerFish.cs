@@ -19,12 +19,18 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Drawing;
 
 namespace FishFeast
 {
 	public class PlayerFish : Fish
 	{
+		private int growthSize = 1;  // multipler for increasing or decreasing the player's fish
 		
+		
+		public PlayerFish() : base(1, new Point(256, 512), true) {
+			
+		}
 	}
 }
 
