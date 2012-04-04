@@ -25,7 +25,6 @@ namespace FishFeast
 {
 	public class Fish
 	{
-			public int Type;
 			public Point Pos;
 			
 			public bool RightFaced;
@@ -38,6 +37,11 @@ namespace FishFeast
 			}
 		
 			public int Speed {
+				get;
+				set;
+			}
+		
+			public int Type {
 				get;
 				set;
 			}
