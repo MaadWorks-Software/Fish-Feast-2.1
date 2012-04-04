@@ -61,32 +61,7 @@ namespace FishFeast
 			// Setup all graphics and windows
 			// then run it!
 			sfcMain = Video.SetVideoMode(1024, 768);
-			sfcBackground = new Surface("media/background.jpg");
-			sfcLogo = new Surface("media/logo.png");
-			sfcInfo = new Surface("media/Info.png");
-			sfcScoreHeader = new Surface("media/scoreHeader.png");
-			
-			sfcFishL.Add(new Surface("media/fish1.png"));
-			sfcFishL.Add(new Surface("media/fish2.png"));
-			sfcFishL.Add(new Surface("media/fish3.png"));
-			sfcFishL.Add(new Surface("media/fish4.png"));
-			sfcFishL.Add(new Surface("media/DeadPlayerFish.png"));
-			
-			sfcFishR.Add(new Surface("media/fish1_r.png"));
-			sfcFishR.Add(new Surface("media/fish2_r.png"));
-			sfcFishR.Add(new Surface("media/fish3_r.png"));
-			sfcFishR.Add(new Surface("media/fish4_r.png"));
-			
-			sfcNumber.Add(new Surface("media/0.png"));
-			sfcNumber.Add(new Surface("media/1.png"));              
-			sfcNumber.Add(new Surface("media/2.png"));
-			sfcNumber.Add(new Surface("media/3.png"));
-			sfcNumber.Add(new Surface("media/4.png"));
-			sfcNumber.Add(new Surface("media/5.png"));
-			sfcNumber.Add(new Surface("media/6.png"));
-			sfcNumber.Add(new Surface("media/7.png"));
-			sfcNumber.Add(new Surface("media/8.png"));
-			sfcNumber.Add(new Surface("media/9.png"));
+			loadMedia();
 			
 			Events.Quit += new EventHandler<QuitEventArgs>(Events_Quit);
 			Events.Tick += new EventHandler<TickEventArgs>(Events_Tick);
@@ -280,6 +255,40 @@ namespace FishFeast
 				x += 60;
 			}
 			scoreDigits.Clear();
+		}
+		
+		
+		/// <summary>
+		/// Loads the media.
+		/// </summary>
+		static void loadMedia() {
+			
+			sfcBackground = new Surface("media/background.jpg");
+			sfcLogo = new Surface("media/logo.png");
+			sfcInfo = new Surface("media/Info.png");
+			sfcScoreHeader = new Surface("media/scoreHeader.png");
+			
+			sfcFishL.Add(new Surface("media/fish1.png"));
+			sfcFishL.Add(new Surface("media/fish2.png"));
+			sfcFishL.Add(new Surface("media/fish3.png"));
+			sfcFishL.Add(new Surface("media/fish4.png"));
+			sfcFishL.Add(new Surface("media/DeadPlayerFish.png"));
+			
+			sfcFishR.Add(new Surface("media/fish1_r.png"));
+			sfcFishR.Add(new Surface("media/fish2_r.png"));
+			sfcFishR.Add(new Surface("media/fish3_r.png"));
+			sfcFishR.Add(new Surface("media/fish4_r.png"));
+			
+			sfcNumber.Add(new Surface("media/0.png"));
+			sfcNumber.Add(new Surface("media/1.png"));              
+			sfcNumber.Add(new Surface("media/2.png"));
+			sfcNumber.Add(new Surface("media/3.png"));
+			sfcNumber.Add(new Surface("media/4.png"));
+			sfcNumber.Add(new Surface("media/5.png"));
+			sfcNumber.Add(new Surface("media/6.png"));
+			sfcNumber.Add(new Surface("media/7.png"));
+			sfcNumber.Add(new Surface("media/8.png"));
+			sfcNumber.Add(new Surface("media/9.png"));
 		}
 	}
 }
