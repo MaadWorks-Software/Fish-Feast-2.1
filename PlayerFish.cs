@@ -25,11 +25,17 @@ namespace FishFeast
 {
 	public class PlayerFish : Fish
 	{
-		private int growthSize = 1;  // multipler for increasing or decreasing the player's fish
+		
 		
 		
 		public PlayerFish() : base(1, new Point(256, 512), true) {
 			
+		}
+		
+		
+		public int GrowthSize { // multipler for increasing or decreasing the player's fish
+			get;
+			set;
 		}
 	}
 }
