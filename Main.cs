@@ -43,10 +43,10 @@ namespace FishFeast
 		static int DeathTimer = 0;
 		static Point DeathPoint = new Point(0,0);
 		
-	//	static List<Surface> sfcFish = new List<Surface>();
 		static List<Surface> sfcFishR = new List<Surface>(); //Going Left to Right or facing right
 		static List<Surface> sfcFishL = new List<Surface>(); //Going right to left or facing left
 		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
+		// need list to hold all power up items
 		
 		static int PlayerFish = 1;
 		static Point PlayerPos = new Point(256, 512);
@@ -289,6 +289,8 @@ namespace FishFeast
 			sfcNumber.Add(new Surface("media/7.png"));
 			sfcNumber.Add(new Surface("media/8.png"));
 			sfcNumber.Add(new Surface("media/9.png"));
+			
+			// TODO: need to add loading of graphic to a surface list
 		}
 	}
 }
