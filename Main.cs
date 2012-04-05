@@ -48,6 +48,8 @@ namespace FishFeast
 		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
 		// need list to hold all power up items
 		
+		
+		// TODO: added all player related properties to the playerFish class
 		static int PlayerFish = 1;
 		static Point PlayerPos = new Point(256, 512);
 		static int PlayerScore = 0;
