@@ -39,7 +39,7 @@ namespace FishFeast
 		static Surface sfcScoreHeader;
 		
 		static bool GameStarted;
-		static bool PlayerAlive = true;  
+		static bool PlayerAlive = true;  // TODO: add to the PlayerFish class
 		static int DeathTimer = 0;
 		static Point DeathPoint = new Point(0,0);
 		
@@ -50,9 +50,9 @@ namespace FishFeast
 		
 		
 		// TODO: added all player related properties to the playerFish class
-		static int PlayerFish = 1;
-		static Point PlayerPos = new Point(256, 512);
-		static int PlayerScore = 0;
+		static int PlayerFish = 1;							// TODO: change to an instance of PlayerFish
+		static Point PlayerPos = new Point(256, 512);		// TODO: remove 
+		static int PlayerScore = 0;							// TODO: add to the PlayerFish class
 
 		static List<Fish> AIFish = new List<Fish>();
 		static int LastFishCreation = 0;
@@ -86,6 +86,7 @@ namespace FishFeast
 					CreateFish();
 				}
 			
+				// TODO: after new Playerfish class is implemented changed PlayerPos to PlayerFish.Pos
 				if (Keyboard.IsKeyPressed(Key.UpArrow)) {
 					PlayerPos.Y -= 10;
 				} else if (Keyboard.IsKeyPressed(Key.DownArrow)) {
@@ -103,6 +104,7 @@ namespace FishFeast
 				DoScore();
 				
 				// check if player's fish is alive?
+				// TODO: need to reference the PlayerFish.isAlive when inplemented
 				if (PlayerAlive) sfcMain.Blit(sfcFishR[PlayerFish], PlayerPos);
 				else 
 				{
