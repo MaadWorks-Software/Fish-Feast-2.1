@@ -27,7 +27,11 @@ namespace FishFeast
 	{
 			
 			
+			// Private fields
+			private int _type;
+		
 			public bool RightFaced;
+			
 
 			public Fish(int type, Point pos, bool rightfaced) {
 				Type = type;
@@ -42,8 +46,16 @@ namespace FishFeast
 			}
 		
 			public int Type {
-				get;
-				set;
+				get 
+				{
+					return this._type;
+				}
+				set 
+				{
+					if (value < 0 || value > 3) 
+						this._type = 0;
+					this._type = value;
+				}
 			}
 			
 			public Point Pos {
