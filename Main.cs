@@ -109,7 +109,7 @@ namespace FishFeast
 					sfcMain.Blit(sfcFishL[4], DeathFloat(PlayerPos));	
 				}
 				
-				//Recode for left or right facing fish surfaces............
+				// TODO: Recode for left or right facing fish surfaces............
 				
 				Rectangle player_rect = new Rectangle(PlayerPos.X, PlayerPos.Y,	sfcFishR[PlayerFish].Width, sfcFishR[PlayerFish].Height);
 			
