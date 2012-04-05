@@ -45,6 +45,13 @@ namespace FishFeast
 				set;
 			}
 		
+			
+			/// <summary>
+			/// Gets or sets the type of fish from 0 to 3.
+			/// </summary>
+			/// <value>
+			/// The fish type an integer from 0..3.
+			/// </value>
 			public int Type {
 				get 
 				{
