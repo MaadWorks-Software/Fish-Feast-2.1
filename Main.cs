@@ -238,13 +238,12 @@ namespace FishFeast
 		/// </summary>
 		static void DoScore() 
 		{
-			string StringScore = PlayerScore.ToString();
 			int x = 180;
 			int digit = 0;
 			List<int> scoreDigits = new List<int>();
 			int i = 0;
 			
-			for (int displayScore = PlayerScore; displayScore > 0; displayScore /= 10)
+			for (int displayScore = playerFish.Score; displayScore > 0; displayScore /= 10)
 			{
 				digit = displayScore % 10;
 				scoreDigits.Add(digit);
