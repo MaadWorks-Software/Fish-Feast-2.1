@@ -86,7 +86,7 @@ namespace FishFeast
 					CreateFish();
 				}
 			
-				// TODO: after new Playerfish class is implemented changed PlayerPos to PlayerFish.Pos
+				
 				if (Keyboard.IsKeyPressed(Key.UpArrow)) {
 					playerFish.Pos.Y -= 10;
 				} else if (Keyboard.IsKeyPressed(Key.DownArrow)) {
@@ -105,7 +105,7 @@ namespace FishFeast
 				
 				// check if player's fish is alive?
 				// TODO: need to reference the PlayerFish.isAlive when inplemented
-				if (PlayerAlive) sfcMain.Blit(sfcFishR[PlayerFish], PlayerPos);
+				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[PlayerFish], PlayerPos);
 				else 
 				{
 					sfcMain.Blit(sfcFishL[4], DeathFloat(PlayerPos));	
