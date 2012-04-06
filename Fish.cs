@@ -31,6 +31,7 @@ namespace FishFeast
 			private int _type;
 		
 			public bool RightFaced;
+			public Point Pos;
 			
 
 			public Fish(int type, Point pos, bool rightfaced) {
@@ -65,10 +66,7 @@ namespace FishFeast
 				}
 			}
 			
-			public Point Pos {
-				get;
-				set;
-			}
+			
 	}
 }
 
