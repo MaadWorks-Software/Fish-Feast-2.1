@@ -27,23 +27,43 @@ namespace FishFeast
 	{
 		
 		
-		
+		/// <summary>
+		/// Initializes a new instance of the <see cref="FishFeast.PlayerFish"/> class.
+		/// </summary>
 		public PlayerFish() : base(1, new Point(256, 512), true) {
 			this.GrowthSize = 1;
 			
 		}
 		
-		
+		/// <summary>
+		/// Gets or sets the size of the growth.
+		/// </summary>
+		/// <value>
+		/// The multipler of the growth.
+		/// </value>
 		public int GrowthSize { // multipler for increasing or decreasing the player's fish
 			get;
 			set;
 		}
 		
+		/// <summary>
+		/// Gets or sets the score.
+		/// </summary>
+		/// <value>
+		/// The score.
+		/// </value>
 		public int Score {
 			get;
 			set;
 		}
 		
+		
+		/// <summary>
+		/// Gets or sets a value indicating whether this instance is alive.
+		/// </summary>
+		/// <value>
+		/// <c>true</c> if this instance is alive; otherwise, <c>false</c>.
+		/// </value>
 		public bool IsAlive {
 			get;
 			set;
