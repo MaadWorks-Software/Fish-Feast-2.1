@@ -130,9 +130,9 @@ namespace FishFeast
 					if (enemy_rect.IntersectsWith(player_rect)) {
 						if (computerfish.Type < playerFish.Type) {
 							AIFish.RemoveAt(i);
-							PlayerScore += 1;
+							playerFish.addScore(1);
 						} else if (computerfish.Type > playerFish.Type) {
-							PlayerAlive = false;
+							playerFish.IsAlive = false;
 							
 						}
 					}
