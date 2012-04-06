@@ -105,15 +105,15 @@ namespace FishFeast
 				
 				// check if player's fish is alive?
 				// TODO: need to reference the PlayerFish.isAlive when inplemented
-				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[PlayerFish], PlayerPos);
+				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[PlayerFish], playerFish.Pos);
 				else 
 				{
-					sfcMain.Blit(sfcFishL[4], DeathFloat(PlayerPos));	
+					sfcMain.Blit(sfcFishL[4], DeathFloat(playerFish.Pos));	
 				}
 				
 				// TODO: Recode for left or right facing fish surfaces............
 				
-				Rectangle player_rect = new Rectangle(PlayerPos.X, PlayerPos.Y,	sfcFishR[PlayerFish].Width, sfcFishR[PlayerFish].Height);
+				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y,	sfcFishR[PlayerFish].Width, sfcFishR[PlayerFish].Height);
 			
 				for (int i = AIFish.Count - 1; i >= 0; --i) {
 					Fish computerfish = AIFish[i];
