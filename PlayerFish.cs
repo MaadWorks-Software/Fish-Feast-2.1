@@ -44,6 +44,11 @@ namespace FishFeast
 			set;
 		}
 		
+		public bool IsAlive {
+			get;
+			set;
+		}
+		
 		
 	}
 }
