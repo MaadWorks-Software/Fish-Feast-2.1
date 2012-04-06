@@ -49,8 +49,8 @@ namespace FishFeast
 		// need list to hold all power up items
 		
 		
-		// TODO: added all player related properties to the playerFish class
-		static int PlayerFish = 1;							// TODO: change to an instance of PlayerFish
+		//  added all player related properties to the playerFish class
+		static PlayerFish playerFish = new PlayerFish();	//  instance of PlayerFish
 		static Point PlayerPos = new Point(256, 512);		// TODO: remove 
 		static int PlayerScore = 0;							//  change to Score property in Playerfish class
 
