@@ -46,7 +46,7 @@ namespace FishFeast
 		static List<Surface> sfcFishR = new List<Surface>(); //Going Left to Right or facing right
 		static List<Surface> sfcFishL = new List<Surface>(); //Going right to left or facing left
 		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
-		// need list to hold all power up items
+		// TODO: need list to hold all power up items
 		
 		
 		//  added all player related properties to the playerFish class
@@ -105,7 +105,7 @@ namespace FishFeast
 				
 				// check if player's fish is alive?
 				// TODO: need to reference the PlayerFish.isAlive when inplemented
-				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[PlayerFish], playerFish.Pos);
+				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
 				else 
 				{
 					sfcMain.Blit(sfcFishL[4], DeathFloat(playerFish.Pos));	
@@ -113,7 +113,7 @@ namespace FishFeast
 				
 				// TODO: Recode for left or right facing fish surfaces............
 				
-				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y,	sfcFishR[PlayerFish].Width, sfcFishR[PlayerFish].Height);
+				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y,	sfcFishR[playerFish.Type].Width, sfcFishR[playerFish.Type].Height);
 			
 				for (int i = AIFish.Count - 1; i >= 0; --i) {
 					Fish computerfish = AIFish[i];
@@ -128,10 +128,10 @@ namespace FishFeast
 						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, sfcFishL[computerfish.Type].Width, sfcFishL[computerfish.Type].Height);
 					}
 					if (enemy_rect.IntersectsWith(player_rect)) {
-						if (computerfish.Type < PlayerFish) {
+						if (computerfish.Type < playerFish.Type) {
 							AIFish.RemoveAt(i);
 							PlayerScore += 1;
-						} else if (computerfish.Type > PlayerFish) {
+						} else if (computerfish.Type > playerFish.Type) {
 							PlayerAlive = false;
 							
 						}
