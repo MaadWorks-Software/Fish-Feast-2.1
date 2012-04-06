@@ -39,7 +39,7 @@ namespace FishFeast
 		static Surface sfcScoreHeader;
 		
 		static bool GameStarted;
-		static bool PlayerAlive = true;  //  changed to isAlive a bool property in PlayerFish class
+		// static bool PlayerAlive = true;  //  changed to isAlive a bool property in PlayerFish class, TODO: remove completely
 		static int DeathTimer = 0;
 		static Point DeathPoint = new Point(0,0);
 		
@@ -52,7 +52,7 @@ namespace FishFeast
 		//  added all player related properties to the playerFish class
 		static PlayerFish playerFish = new PlayerFish();	//  instance of PlayerFish
 		static Point PlayerPos = new Point(256, 512);		// TODO: remove 
-		static int PlayerScore = 0;							//  change to Score property in Playerfish class
+		// static int PlayerScore = 0;							//  change to Score property in Playerfish class, TODO remove completely
 
 		static List<Fish> AIFish = new List<Fish>();
 		static int LastFishCreation = 0;
