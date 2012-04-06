@@ -88,9 +88,9 @@ namespace FishFeast
 			
 				// TODO: after new Playerfish class is implemented changed PlayerPos to PlayerFish.Pos
 				if (Keyboard.IsKeyPressed(Key.UpArrow)) {
-					PlayerPos.Y -= 10;
+					playerFish.Pos.Y -= 10;
 				} else if (Keyboard.IsKeyPressed(Key.DownArrow)) {
-					PlayerPos.Y += 10;
+					playerFish.Pos.Y += 10;
 				}
 
 				if (Keyboard.IsKeyPressed(Key.LeftArrow)) {
