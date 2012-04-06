@@ -32,6 +32,7 @@ namespace FishFeast
 		/// </summary>
 		public PlayerFish() : base(1, new Point(256, 512), true) {
 			this.GrowthSize = 1;
+			this.IsAlive = true;
 			
 		}
 		
