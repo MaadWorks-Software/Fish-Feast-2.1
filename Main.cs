@@ -46,12 +46,11 @@ namespace FishFeast
 		static List<Surface> sfcFishR = new List<Surface>(); //Going Left to Right or facing right
 		static List<Surface> sfcFishL = new List<Surface>(); //Going right to left or facing left
 		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
-		// TODO: need list to hold all power up items
+		static List<Surface> sfcPowerUps = new List<Surface>(); // list to hold graphics of all power up items
 		
 		
 		//  added all player related properties to the playerFish class
-		static PlayerFish playerFish = new PlayerFish();	//  instance of PlayerFish
-		static Point PlayerPos = new Point(256, 512);		// TODO: remove 
+		static PlayerFish playerFish = new PlayerFish();	//  instance of PlayerFish class
 		// static int PlayerScore = 0;							//  change to Score property in Playerfish class, TODO remove completely
 
 		static List<Fish> AIFish = new List<Fish>();
