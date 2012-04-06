@@ -41,7 +41,8 @@ namespace FishFeast
 		/// <value>
 		/// The multipler of the growth.
 		/// </value>
-		public int GrowthSize { // multipler for increasing or decreasing the player's fish
+		public int GrowthSize { 
+			
 			get;
 			set;
 		}
@@ -68,8 +69,20 @@ namespace FishFeast
 			get;
 			set;
 		}
-		
+	
+		/// <summary>
+		/// Adds to the score. Pass a negative number to subtract.
+		/// </summary>
+		/// <param name='score'>
+		/// integer to be added to Score of this instance
+		/// </param>
+		public void addScore(int score) {
+	
+			this.Score += score;
+		}	
 		
 	}
+	
+	
 }
 
