@@ -94,9 +94,9 @@ namespace FishFeast
 				}
 
 				if (Keyboard.IsKeyPressed(Key.LeftArrow)) {
-					PlayerPos.X -= 10;
+					playerFish.Pos.X -= 10;
 				} else if (Keyboard.IsKeyPressed(Key.RightArrow)) {
-					PlayerPos.X += 10;
+					playerFish.Pos.X += 10;
 				}
 			
 				sfcMain.Blit(sfcBackground);
