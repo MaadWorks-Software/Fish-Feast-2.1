@@ -25,6 +25,11 @@ namespace FishFeast
 {
 	public class PlayerFish : Fish
 	{
+		/// <summary>
+		/// The multipler of the growth.
+		/// </summary>
+		private double _growthSize;
+		
 		
 		
 		/// <summary>
@@ -42,10 +47,16 @@ namespace FishFeast
 		/// <value>
 		/// The multipler of the growth.
 		/// </value>
-		public int GrowthSize { 
+		public double GrowthSize { 
 			
-			get;
-			set;
+			get {
+				return _growthSize;
+			}
+			
+			set {
+				this.Size = this.Type * value;
+				_growthSize = value;
+			}
 		}
 		
 		/// <summary>
