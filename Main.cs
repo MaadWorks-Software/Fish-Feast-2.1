@@ -103,7 +103,6 @@ namespace FishFeast
 				DoScore();
 				
 				// check if player's fish is alive?
-				// TODO: need to reference the PlayerFish.isAlive when inplemented
 				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
 				else 
 				{
@@ -293,6 +292,8 @@ namespace FishFeast
 			sfcNumber.Add(new Surface("media/9.png"));
 			
 			// TODO: need to add loading of graphic to a surface list
+			sfcPowerUps.Add(new Surface("media/growPill.png"));
+			sfcPowerUps.Add(new Surface("media/timeStopPowerUp.png"));                
 		}
 	}
 }
