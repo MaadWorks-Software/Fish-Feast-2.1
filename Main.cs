@@ -61,7 +61,8 @@ namespace FishFeast
 			
 			// Setup all graphics and windows
 			// then run it!
-			sfcMain = Video.SetVideoMode(1024, 768);
+			sfcMain = Video.SetVideoMode(1024,768);
+			
 			loadMedia();
 			
 			Events.Quit += new EventHandler<QuitEventArgs>(Events_Quit);
@@ -160,7 +161,11 @@ namespace FishFeast
 				if (!GameStarted) {
 					GameStarted = true;
 				} else {
-					// game already started!
+					if (!playerFish.IsAlive) {
+						playerFish = new PlayerFish();	// new player needed
+						GameStarted = false;   			// reset game
+						DeathTimer = 0;		   			// reset death stats
+					}
 				}
 			}
 		}
