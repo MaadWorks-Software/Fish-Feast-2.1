@@ -280,6 +280,7 @@ namespace FishFeast
 			sfcFishR.Add(new Surface("media/fish3_r.png"));
 			sfcFishR.Add(new Surface("media/fish4_r.png"));
 			
+			// Numbers used in score
 			sfcNumber.Add(new Surface("media/0.png"));
 			sfcNumber.Add(new Surface("media/1.png"));              
 			sfcNumber.Add(new Surface("media/2.png"));
@@ -291,7 +292,7 @@ namespace FishFeast
 			sfcNumber.Add(new Surface("media/8.png"));
 			sfcNumber.Add(new Surface("media/9.png"));
 			
-			// TODO: need to add loading of graphic to a surface list
+			// Power up graphics
 			sfcPowerUps.Add(new Surface("media/growPill.png"));
 			sfcPowerUps.Add(new Surface("media/timeStopPowerUp.png"));                
 		}
