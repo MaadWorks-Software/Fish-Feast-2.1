@@ -23,7 +23,7 @@ using System.Drawing;
 
 namespace FishFeast
 {
-	public class Fish
+	public class Fish : BaseObject
 	{
 			
 			
@@ -31,22 +31,17 @@ namespace FishFeast
 			private int _type;
 		
 			public bool RightFaced;
-			public Point Pos;
+			
 			
 
-			public Fish(int type, Point pos, bool rightfaced) {
+			public Fish(int type, Point pos, bool rightfaced) : base() {
 				Type = type;
 				Pos = pos;
 				RightFaced = rightfaced;
 			
 			}
 		
-			public int Speed {
-				get;
-				set;
-			}
-		
-			
+						
 			/// <summary>
 			/// Gets or sets the type of fish from 0 to 3.
 			/// </summary>
