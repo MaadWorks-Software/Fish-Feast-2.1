@@ -39,7 +39,6 @@ namespace FishFeast
 		static Surface sfcScoreHeader;
 		
 		static bool GameStarted;
-		// static bool PlayerAlive = true;  //  changed to isAlive a bool property in PlayerFish class, TODO: remove completely
 		static int DeathTimer = 0;
 		static Point DeathPoint = new Point(0,0);
 		
@@ -47,12 +46,10 @@ namespace FishFeast
 		static List<Surface> sfcFishL = new List<Surface>(); //Going right to left or facing left
 		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
 		static List<Surface> sfcPowerUps = new List<Surface>(); // list to hold graphics of all power up items
-		
-		
+				
 		//  added all player related properties to the playerFish class
 		static PlayerFish playerFish = new PlayerFish();	//  instance of PlayerFish class
-		// static int PlayerScore = 0;							//  change to Score property in Playerfish class, TODO remove completely
-
+		
 		static List<Fish> AIFish = new List<Fish>();
 		static int LastFishCreation = 0;
 				
@@ -169,6 +166,9 @@ namespace FishFeast
 				}
 			}
 		}
+		
+		
+		// TODO: create a method to randomly create power ups.
 		
 		static void CreateFish() {
 			Random rand = new Random();
