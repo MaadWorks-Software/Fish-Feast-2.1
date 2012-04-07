@@ -58,7 +58,20 @@ namespace FishFeast
 					if (value < 0 || value > 3) 
 						this._type = 0;
 					this._type = value;
+					this.Size = value;
 				}
+			}
+		
+			//// <summary>
+			/// Gets or sets the size.
+			/// </summary>
+			/// <value>
+			/// The size.
+			/// </value>
+			public double Size {
+				get;
+			
+				protected set;
 			}
 			
 			
