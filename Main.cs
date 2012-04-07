@@ -126,10 +126,10 @@ namespace FishFeast
 						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, sfcFishL[computerfish.Type].Width, sfcFishL[computerfish.Type].Height);
 					}
 					if (enemy_rect.IntersectsWith(player_rect)) {
-						if (computerfish.Type < playerFish.Type) {
+						if (computerfish.Size < playerFish.Size) {
 							AIFish.RemoveAt(i);
 							playerFish.addScore(1);
-						} else if (computerfish.Type > playerFish.Type) {
+						} else if (computerfish.Size > playerFish.Size) {
 							playerFish.IsAlive = false;
 							
 						}
