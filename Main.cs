@@ -94,8 +94,10 @@ namespace FishFeast
 
 				if (Keyboard.IsKeyPressed(Key.LeftArrow)) {
 					playerFish.Pos.X -= 10;
+					playerFish.RightFaced = false;
 				} else if (Keyboard.IsKeyPressed(Key.RightArrow)) {
 					playerFish.Pos.X += 10;
+					playerFish.RightFaced = true;
 				}
 			
 				sfcMain.Blit(sfcBackground);
@@ -103,7 +105,13 @@ namespace FishFeast
 				DoScore();
 				
 				// check if player's fish is alive?
-				if (playerFish.IsAlive) sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
+				if (playerFish.IsAlive) {
+					if (playerFish.RightFaced) {		// draw based if player is right or left faced
+						sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
+					} else {
+						sfcMain.Blit(sfcFishL[playerFish.Type], playerFish.Pos);
+					}
+				}
 				else 
 				{
 					sfcMain.Blit(sfcFishL[4], DeathFloat(playerFish.Pos));	
