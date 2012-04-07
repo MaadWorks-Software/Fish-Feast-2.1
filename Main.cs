@@ -42,13 +42,13 @@ namespace FishFeast
 		static int DeathTimer = 0;
 		static Point DeathPoint = new Point(0,0);
 		
-		static List<Surface> sfcFishR = new List<Surface>(); //Going Left to Right or facing right
-		static List<Surface> sfcFishL = new List<Surface>(); //Going right to left or facing left
-		static List<Surface> sfcNumber = new List<Surface>(); // Holds the graphics for the score
-		static List<Surface> sfcPowerUps = new List<Surface>(); // list to hold graphics of all power up items
+		static List<Surface> sfcFishR = new List<Surface>(); 	//	Going Left to Right or facing right
+		static List<Surface> sfcFishL = new List<Surface>(); 	//	Going right to left or facing left
+		static List<Surface> sfcNumber = new List<Surface>(); 	// 	the graphics for the score
+		static List<Surface> sfcPowerUps = new List<Surface>(); // 	list to hold graphics of all power up items
 				
 		//  added all player related properties to the playerFish class
-		static PlayerFish playerFish = new PlayerFish();	//  instance of PlayerFish class
+		static PlayerFish playerFish = new PlayerFish();		//  instance of PlayerFish class
 		
 		static List<Fish> AIFish = new List<Fish>();
 		static int LastFishCreation = 0;
@@ -104,7 +104,8 @@ namespace FishFeast
 				
 				// check if player's fish is alive?
 				if (playerFish.IsAlive) {
-					if (playerFish.RightFaced) {		// draw based if player is right or left faced
+					if (playerFish.RightFaced) {		// draw based if player is right 
+														// or left faced
 						sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
 					} else {
 						sfcMain.Blit(sfcFishL[playerFish.Type], playerFish.Pos);
@@ -117,7 +118,9 @@ namespace FishFeast
 				
 				// TODO: Recode for left or right facing fish surfaces............
 				
-				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y,	sfcFishR[playerFish.Type].Width, sfcFishR[playerFish.Type].Height);
+				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y, 
+				                                      sfcFishR[playerFish.Type].Width, 
+				                                      sfcFishR[playerFish.Type].Height);
 			
 				for (int i = AIFish.Count - 1; i >= 0; --i) {
 					Fish computerfish = AIFish[i];
@@ -125,11 +128,15 @@ namespace FishFeast
 					if (computerfish.RightFaced == true) 
 					{
 						computerfish.Pos.X += computerfish.Speed;
-						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, sfcFishR[computerfish.Type].Width, sfcFishR[computerfish.Type].Height);
+						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, 
+						                           sfcFishR[computerfish.Type].Width, 
+						                           sfcFishR[computerfish.Type].Height);
 					} else
 					{
 						computerfish.Pos.X -= computerfish.Speed;
-						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, sfcFishL[computerfish.Type].Width, sfcFishL[computerfish.Type].Height);
+						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, 
+						                           sfcFishL[computerfish.Type].Width, 
+						                           sfcFishL[computerfish.Type].Height);
 					}
 					if (enemy_rect.IntersectsWith(player_rect)) {
 						if (computerfish.Size < playerFish.Size) {
@@ -140,7 +147,8 @@ namespace FishFeast
 							
 						}
 					}
-					if (computerfish.RightFaced == true) sfcMain.Blit(sfcFishR[computerfish.Type], computerfish.Pos);
+					if (computerfish.RightFaced == true) sfcMain.Blit(sfcFishR[computerfish.Type], 
+					                                                  computerfish.Pos);
 					else sfcMain.Blit(sfcFishL[computerfish.Type], computerfish.Pos);
 				}
 
