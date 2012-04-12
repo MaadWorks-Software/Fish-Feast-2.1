@@ -83,6 +83,7 @@ namespace FishFeast
 			if (GameStarted) {				
 				if (LastFishCreation + 1000 < Timer.TicksElapsed) {
 					CreateFish();
+					CreatePowerUp();
 				}
 			
 				
@@ -123,7 +124,17 @@ namespace FishFeast
 				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y, 
 				                                      sfcFishR[playerFish.Type].Width, 
 				                                      sfcFishR[playerFish.Type].Height);
-			
+				
+				// add power ups to main surface.
+				foreach (var item in PowerUps) {
+					sfcMain.Blit(sfcPowerUps[(int)item.Type], item.Pos);
+					item.Pos.Y -= 3;
+					if (item.Pos.Y > 800) {
+						PowerUps.Remove(item);
+					}
+				}
+				
+				
 				for (int i = AIFish.Count - 1; i >= 0; --i) {
 					Fish computerfish = AIFish[i];
 					
@@ -185,23 +196,29 @@ namespace FishFeast
 			
 			Random rand = new Random();
 			PowerUpItem item = null;
+			bool isCreated = false;
 			
 			
 			switch (rand.Next(100)) {
 			case 2:
 				item = new PowerUpItem();
 				item.Type = PowerUpItem.PowerUpTypes.growthpill;
+				isCreated = true;
 				break;
 			case 97:
 				item = new PowerUpItem();
 				item.Type = PowerUpItem.PowerUpTypes.timestop;
+				isCreated = true;
 				break;
 				
 			}
 			
-			int posX = rand.Next(1024);
-			int posY = rand.Next(20);
-			item.Pos = new Point(posX, posY);
+			if (isCreated) {
+				int posX = rand.Next(1024);
+				int posY = rand.Next(20);
+				item.Pos = new Point(posX, posY);
+				PowerUps.Add(item);
+			}
 		}
 		
 		/// <summary>
