@@ -40,7 +40,7 @@ namespace FishFeast
 		/// <value>
 		/// The type.
 		/// </value>
-		public PowerUpItem Type {
+		public PowerUpTypes Type {
 			get;
 			set;	
 		}
