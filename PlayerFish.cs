@@ -40,6 +40,11 @@ namespace FishFeast
 			this.GrowthSize = 1;
 			this.IsAlive = true;
 			
+			// initialize all power up type to zero for amounts
+			foreach (var item in PowerUpItem.PowerUpTypes) {
+				this.PowerUps[item] = 0;
+			}
+			
 		}
 		
 		/// <summary>
