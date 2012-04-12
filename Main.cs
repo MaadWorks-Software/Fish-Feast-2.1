@@ -76,7 +76,7 @@ namespace FishFeast
 		}
 
 		static void Events_Tick(object sender, TickEventArgs e) {
-			Rectangle enemy_rect;
+			Rectangle enemy_rect, item_rect;
 			
 			
 			
@@ -128,9 +128,20 @@ namespace FishFeast
 				// add power ups to main surface.
 				for(int i = 0; i < PowerUps.Count; i++) {
 					sfcMain.Blit(sfcPowerUps[(int)PowerUps[i].Type], PowerUps[i].Pos);
-					PowerUps[i].Pos.Y += 2;
-					if (PowerUps[i].Pos.Y > 800) {
-						PowerUps.RemoveAt(i); 
+					item_rect = new Rectangle(PowerUps[i].Pos.X, PowerUps[i].Pos.Y, 
+						                           sfcPowerUps[(int)PowerUps[i].Type].Width, 
+						                           sfcPowerUps[(int)PowerUps[i].Type].Height);
+					if (item_rect.IntersectsWith(player_rect)) {
+						
+						// add power up to player
+						Console.WriteLine(PowerUps[i].Type + " : power up added!");
+						PowerUps.RemoveAt(i);
+					} else {
+						
+						PowerUps[i].Pos.Y += 2;
+						if (PowerUps[i].Pos.Y > 800) {
+							PowerUps.RemoveAt(i);
+						}
 					}
 				}
 				
