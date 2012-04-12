@@ -119,18 +119,18 @@ namespace FishFeast
 					sfcMain.Blit(sfcFishL[4], DeathFloat(playerFish.Pos));	
 				}
 				
-				// TODO: Recode for left or right facing fish surfaces............
+				
 				
 				Rectangle player_rect = new Rectangle(playerFish.Pos.X, playerFish.Pos.Y, 
 				                                      sfcFishR[playerFish.Type].Width, 
 				                                      sfcFishR[playerFish.Type].Height);
 				
 				// add power ups to main surface.
-				foreach (var item in PowerUps) {
-					sfcMain.Blit(sfcPowerUps[(int)item.Type], item.Pos);
-					item.Pos.Y += 3;
-					if (item.Pos.Y > 800) {
-						PowerUps.Remove(item);
+				for(int i = 0; i < PowerUps.Count; i++) {
+					sfcMain.Blit(sfcPowerUps[(int)PowerUps[i].Type], PowerUps[i].Pos);
+					PowerUps[i].Pos.Y += 2;
+					if (PowerUps[i].Pos.Y > 800) {
+						PowerUps.RemoveAt(i); 
 					}
 				}
 				
