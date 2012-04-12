@@ -30,7 +30,7 @@ namespace FishFeast
 	public class BaseObject
 	{
 		/// <summary>
-		/// The position of the object.
+		/// The position of the object
 		/// </summary>
 		public Point Pos;
 		
