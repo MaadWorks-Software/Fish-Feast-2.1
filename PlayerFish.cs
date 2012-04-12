@@ -20,6 +20,7 @@
 
 using System;
 using System.Drawing;
+using System.Collections;
 
 namespace FishFeast
 {
@@ -100,7 +101,7 @@ namespace FishFeast
 		/// <value>
 		/// The power ups.
 		/// </value>
-		public Dictonary<string, int> PowerUps {
+		public Dictonary<PowerUpItem, int> PowerUps {
 			get;
 			set;
 		}
