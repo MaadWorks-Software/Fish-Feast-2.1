@@ -93,6 +93,18 @@ namespace FishFeast
 			this.Score += score;
 		}	
 		
+		
+		/// <summary>
+		/// Gets or sets the power ups.
+		/// </summary>
+		/// <value>
+		/// The power ups.
+		/// </value>
+		public Dictonary<string, int> PowerUps {
+			get;
+			set;
+		}
+		
 	}
 	
 	
