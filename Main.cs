@@ -128,7 +128,7 @@ namespace FishFeast
 				// add power ups to main surface.
 				foreach (var item in PowerUps) {
 					sfcMain.Blit(sfcPowerUps[(int)item.Type], item.Pos);
-					item.Pos.Y -= 3;
+					item.Pos.Y += 3;
 					if (item.Pos.Y > 800) {
 						PowerUps.Remove(item);
 					}
