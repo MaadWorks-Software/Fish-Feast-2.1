@@ -51,6 +51,7 @@ namespace FishFeast
 		static PlayerFish playerFish = new PlayerFish();		//  instance of PlayerFish class
 		
 		static List<Fish> AIFish = new List<Fish>();			// collection to hold all non player fishes
+																// collection for power ups
 		static List<PowerUpItem> PowerUps = new List<PowerUpItem>(); 
 		static int LastFishCreation = 0;
 				
@@ -177,18 +178,30 @@ namespace FishFeast
 		}
 		
 		
-		// TODO: create a method to randomly create power ups.
+		/// <summary>
+		/// Creates the power up.
+		/// </summary>
 		static void CreatePowerUp() {
 			
 			Random rand = new Random();
+			PowerUpItem item = null;
+			
 			
 			switch (rand.Next(100)) {
 			case 2:
+				item = new PowerUpItem();
+				item.Type = PowerUpItem.PowerUpTypes.growthpill;
 				break;
 			case 97:
+				item = new PowerUpItem();
+				item.Type = PowerUpItem.PowerUpTypes.timestop;
 				break;
 				
 			}
+			
+			int posX = rand.Next(1024);
+			int posY = rand.Next(20);
+			item.Pos = new Point(posX, posY);
 		}
 		
 		/// <summary>
