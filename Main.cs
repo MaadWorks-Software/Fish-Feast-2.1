@@ -54,6 +54,8 @@ namespace FishFeast
 																// collection for power ups
 		static List<PowerUpItem> PowerUps = new List<PowerUpItem>(); 
 		static int LastFishCreation = 0;
+		static bool isTimeStopped = false;						// is time running for world or not
+		static int timeStopCounter = 0;
 				
 		public static void Main(string[] args)
 		{
@@ -81,7 +83,7 @@ namespace FishFeast
 			
 			
 			if (GameStarted) {				
-				if (LastFishCreation + 1000 < Timer.TicksElapsed) {
+				if (LastFishCreation + 1000 < Timer.TicksElapsed && !isTimeStopped) {
 					CreateFish();
 					CreatePowerUp();
 				}
@@ -139,10 +141,11 @@ namespace FishFeast
 						playerFish.powerUps[PowerUps[i].Type] += 1;
 						PowerUps.RemoveAt(i);
 					} else {
-						
-						PowerUps[i].Pos.Y += 2;
-						if (PowerUps[i].Pos.Y > 800) {
-							PowerUps.RemoveAt(i);
+						if (!isTimeStopped) {
+							PowerUps[i].Pos.Y += 2;
+							if (PowerUps[i].Pos.Y > 800) {
+								PowerUps.RemoveAt(i);
+							}
 						}
 					}
 				}
@@ -153,13 +156,13 @@ namespace FishFeast
 					
 					if (computerfish.RightFaced == true) 
 					{
-						computerfish.Pos.X += computerfish.Speed;
+						if (!isTimeStopped) computerfish.Pos.X += computerfish.Speed;
 						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, 
 						                           sfcFishR[computerfish.Type].Width, 
 						                           sfcFishR[computerfish.Type].Height);
 					} else
 					{
-						computerfish.Pos.X -= computerfish.Speed;
+						if (!isTimeStopped) computerfish.Pos.X -= computerfish.Speed;
 						enemy_rect = new Rectangle(computerfish.Pos.X, computerfish.Pos.Y, 
 						                           sfcFishL[computerfish.Type].Width, 
 						                           sfcFishL[computerfish.Type].Height);
@@ -178,6 +181,9 @@ namespace FishFeast
 					else sfcMain.Blit(sfcFishL[computerfish.Type], computerfish.Pos);
 				}
 
+				if (timeStopCounter + 2500 < Timer.TicksElapsed) {
+					isTimeStopped = false;
+				}
 			} else {
 				sfcMain.Blit(sfcBackground);
 				sfcMain.Blit(sfcLogo, new Point(254, 236));
@@ -199,6 +205,17 @@ namespace FishFeast
 					}
 				}
 			}
+			if (e.Key == Key.One) {
+				
+			}
+			if (e.Key == Key.Two) {
+				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.timestop] > 0 && !isTimeStopped) {
+					playerFish.powerUps[PowerUpItem.PowerUpTypes.timestop] -= 1;
+					isTimeStopped = true;
+					timeStopCounter = Timer.TicksElapsed;
+					
+				}
+			}
 		}
 		
 		
@@ -214,11 +231,13 @@ namespace FishFeast
 			
 			switch (rand.Next(100)) {
 			case 2:
+			case 3:
 				item = new PowerUpItem();
 				item.Type = PowerUpItem.PowerUpTypes.growthpill;
 				isCreated = true;
 				break;
 			case 97:
+			case 98:
 				item = new PowerUpItem();
 				item.Type = PowerUpItem.PowerUpTypes.timestop;
 				isCreated = true;
