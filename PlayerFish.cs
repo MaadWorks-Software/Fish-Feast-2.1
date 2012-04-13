@@ -20,7 +20,7 @@
 
 using System;
 using System.Drawing;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace FishFeast
 {
@@ -31,6 +31,7 @@ namespace FishFeast
 		/// </summary>
 		private double _growthSize;
 		
+		public Dictionary<PowerUpItem.PowerUpTypes, int> powerUps;
 		
 		
 		/// <summary>
@@ -41,8 +42,9 @@ namespace FishFeast
 			this.IsAlive = true;
 			
 			// initialize all power up type to zero for amounts
-			foreach (var item in PowerUpItem.PowerUpTypes) {
-				this.PowerUps[item] = 0;
+			var powerItems = Enum.GetValues(typeof(PowerUpItem.PowerUpTypes));
+			foreach (PowerUpItem.PowerUpTypes item in powerItems) {
+				this.powerUps.Add(item, 0);
 			}
 			
 		}
@@ -100,16 +102,6 @@ namespace FishFeast
 		}	
 		
 		
-		/// <summary>
-		/// Gets or sets the power ups.
-		/// </summary>
-		/// <value>
-		/// The power ups.
-		/// </value>
-		public Dictonary<PowerUpItem, int> PowerUps {
-			get;
-			set;
-		}
 		
 	}
 	
