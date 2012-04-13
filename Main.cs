@@ -187,6 +187,7 @@ namespace FishFeast
 				}
 				
 				if (!playerFish.IsAlive) {
+					sfcMain.Blit(sfcOpps, new Point(280, 200));
 					sfcMain.Blit(sfcInfo, new Point(254, 400));
 				}
 				
@@ -388,7 +389,7 @@ namespace FishFeast
 			sfcLogo = new Surface("media/logo.png");
 			sfcInfo = new Surface("media/Info.png");
 			sfcScoreHeader = new Surface("media/scoreHeader.png");
-			sfcOpps = new Surface("media/opps.png");
+			sfcOpps = new Surface("media/oops.png");
 			
 			
 			sfcFishL.Add(new Surface("media/fish1.png"));
