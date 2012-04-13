@@ -4,13 +4,13 @@
 compiled program.
 
 #####update:#####
-Version 0.1a
+*Version 0.1a*  
 Now the player changes direction based on movement.
 
-Version 0.2a.001
-Power Ups added:
-Growth Pill
-Time stop
+*Version 0.2a.001*
+Power Ups added:  
+Growth Pill  
+Time stop  
 
 
 
