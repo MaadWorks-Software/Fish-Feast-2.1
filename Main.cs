@@ -311,15 +311,18 @@ namespace FishFeast
 		
 		}
 		
-		static void renderNumber(int number, Point point) {
+		static void RenderNumber(int number, Point point) {
 			sfcMain.Blit(sfcNumber[number], point);
 		}
 		
 		static void DoHeaderBar() {
 			
-			sfcMain.Blit(sfcPowerUps[0], new Point(0,0));
-			renderNumber(playerFish.powerUps[(PowerUpItem.PowerUpTypes)0], new Point(0, 30));
-			
+			int j = 0;
+			for (int i = 0; i < sfcPowerUps.Count; i++) {
+				sfcMain.Blit(sfcPowerUps[i] ,new Point(j,0));
+				RenderNumber(playerFish.powerUps[(PowerUpItem.PowerUpTypes)i], new Point(j, 30));
+				j += 70;
+			}
 			
 		}
 		
@@ -344,7 +347,7 @@ namespace FishFeast
 			for (i = scoreDigits.Count - 1 ;i > -1; i--) 
 			{
 				digit = scoreDigits[i];
-				sfcMain.Blit(sfcNumber[digit], new Point(x, 708));
+				RenderNumber(digit, new Point(x, 708));
 				x += 60;
 			}
 			scoreDigits.Clear();
