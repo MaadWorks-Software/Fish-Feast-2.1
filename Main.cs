@@ -135,7 +135,7 @@ namespace FishFeast
 						
 						// add power up to player
 						Console.WriteLine(PowerUps[i].Type + " : power up added!");
-						playerFish.PowerUps[PowerUps[i].Type] += 1;
+						playerFish.powerUps[PowerUps[i].Type] += 1;
 						PowerUps.RemoveAt(i);
 					} else {
 						
@@ -308,6 +308,10 @@ namespace FishFeast
 				return DeathPoint;
 			}
 		
+		}
+		
+		static void DoScoreBar() {
+			
 		}
 		
 		/// <summary>
