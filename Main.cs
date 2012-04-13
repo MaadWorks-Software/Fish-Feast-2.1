@@ -103,7 +103,8 @@ namespace FishFeast
 			
 				sfcMain.Blit(sfcBackground);
 				sfcMain.Blit(sfcScoreHeader, new Point(0,708));
-				DoScore();
+				DoScore();												// calculates score
+				DoHeaderBar();											// show power ups on top.
 				
 				// check if player's fish is alive?
 				if (playerFish.IsAlive) {
@@ -312,6 +313,7 @@ namespace FishFeast
 		
 		static void DoHeaderBar() {
 			
+			sfcMain.Blit(sfcPowerUps[0], new Point(0,0));
 			
 		}
 		
