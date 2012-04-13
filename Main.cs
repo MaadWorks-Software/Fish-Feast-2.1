@@ -311,9 +311,15 @@ namespace FishFeast
 		
 		}
 		
+		static void renderNumber(int number, Point point) {
+			sfcMain.Blit(sfcNumber[number], point);
+		}
+		
 		static void DoHeaderBar() {
 			
 			sfcMain.Blit(sfcPowerUps[0], new Point(0,0));
+			renderNumber(playerFish.powerUps[(PowerUpItem.PowerUpTypes)0], new Point(0, 30));
+			
 			
 		}
 		
