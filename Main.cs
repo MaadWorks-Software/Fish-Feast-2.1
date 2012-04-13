@@ -310,7 +310,8 @@ namespace FishFeast
 		
 		}
 		
-		static void DoScoreBar() {
+		static void DoHeaderBar() {
+			
 			
 		}
 		
