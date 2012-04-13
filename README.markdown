@@ -15,9 +15,9 @@ Time stop
 
 
 ###Directions###
-Player moves: 	arrow keys
-Start game:   	space bar
-use power ups:	keys 1..9
+Player moves: 	arrow keys  
+Start game:   	space bar  
+use power ups:	keys 1..9  
 
 ####Objectives####
 Eat all smaller fish to score one point!
