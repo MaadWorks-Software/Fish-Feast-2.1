@@ -40,6 +40,7 @@ namespace FishFeast
 		public PlayerFish() : base(1, new Point(256, 512), true) {
 			this.GrowthSize = 1;
 			this.IsAlive = true;
+			this.powerUps = new Dictionary<PowerUpItem.PowerUpTypes, int>();
 			
 			// initialize all power up type to zero for amounts
 			var powerItems = Enum.GetValues(typeof(PowerUpItem.PowerUpTypes));
