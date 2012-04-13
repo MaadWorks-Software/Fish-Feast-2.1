@@ -37,6 +37,7 @@ namespace FishFeast
 		static Surface sfcLogo;
 		static Surface sfcInfo;
 		static Surface sfcScoreHeader;
+		static Surface sfcOpps;
 		
 		static bool GameStarted;
 		static int DeathTimer = 0;
@@ -184,6 +185,11 @@ namespace FishFeast
 				if (timeStopCounter + 2500 < Timer.TicksElapsed) {
 					isTimeStopped = false;
 				}
+				
+				if (!playerFish.IsAlive) {
+					sfcMain.Blit(sfcInfo, new Point(254, 400));
+				}
+				
 			} else {
 				sfcMain.Blit(sfcBackground);
 				sfcMain.Blit(sfcLogo, new Point(254, 236));
@@ -382,6 +388,8 @@ namespace FishFeast
 			sfcLogo = new Surface("media/logo.png");
 			sfcInfo = new Surface("media/Info.png");
 			sfcScoreHeader = new Surface("media/scoreHeader.png");
+			sfcOpps = new Surface("media/opps.png");
+			
 			
 			sfcFishL.Add(new Surface("media/fish1.png"));
 			sfcFishL.Add(new Surface("media/fish2.png"));
