@@ -374,7 +374,7 @@ namespace FishFeast
 			{
 				digit = scoreDigits[i];
 				RenderNumber(digit, new Point(x, 708));
-				x += 60;
+				x += 40;
 			}
 			scoreDigits.Clear();
 		}
