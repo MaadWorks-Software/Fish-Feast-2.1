@@ -172,10 +172,10 @@ namespace FishFeast
 						                           sfcFishL[computerfish.Type].Height);
 					}
 					if (enemy_rect.IntersectsWith(player_rect)) {
-						if (computerfish.Size < playerFish.GrowthSize) {
+						if (computerfish.Size < (int)playerFish.GrowthSize) {
 							AIFish.RemoveAt(i);
-							playerFish.addScore(1);
-						} else if (computerfish.Size > playerFish.GrowthSize) {
+							playerFish.addScore((int)computerfish.Size + 1);
+						} else if (computerfish.Size > (int)playerFish.GrowthSize) {
 							playerFish.IsAlive = false;
 							
 						}
