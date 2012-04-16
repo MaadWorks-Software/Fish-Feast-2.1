@@ -214,7 +214,12 @@ namespace FishFeast
 				}
 			}
 			if (e.Key == Key.One) {
-			
+				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] > 0 && playerFish.Size > 1) {
+					powerUpTimer = Timer.TicksElapsed;
+					playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] -= 1;
+					playerFish.GrowthSize = 2;
+				}
+				
 			}
 			if (e.Key == Key.Two) {
 				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.timestop] > 0 && !isTimeStopped) {
