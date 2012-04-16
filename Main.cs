@@ -114,10 +114,10 @@ namespace FishFeast
 				if (playerFish.IsAlive) {
 					if (playerFish.RightFaced) {		// draw based if player is right 
 														// or left faced
-						if (playerFish.GrowthSize > 1) sfcMain.Blit(sfcFishR[5], playerFish.Pos);
+						if (playerFish.GrowthSize > 1) sfcMain.Blit(sfcFishR[4], playerFish.Pos);
 						else sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
 					} else {
-						if (playerFish.GrowthSize > 1) sfcMain.Blit (sfcFishL[6], playerFish.Pos);
+						if (playerFish.GrowthSize > 1) sfcMain.Blit(sfcFishL[5], playerFish.Pos);
 						else sfcMain.Blit(sfcFishL[playerFish.Type], playerFish.Pos);
 					}
 				}
