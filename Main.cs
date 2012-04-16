@@ -57,6 +57,7 @@ namespace FishFeast
 		static int LastFishCreation = 0;
 		static bool isTimeStopped = false;						// is time running for world or not
 		static int timeStopCounter = 0;
+		static int powerUpTimer = 0;
 				
 		public static void Main(string[] args)
 		{
