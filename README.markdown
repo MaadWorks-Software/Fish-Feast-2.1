@@ -12,6 +12,9 @@ Power Ups added:
 Growth Pill  
 Time stop  
 
+*0.2a.004*
+Growth Pill works now
+new scoring system which is based on how big the fish is from the smallest
 
 
 ###Directions###
@@ -21,3 +24,4 @@ use power ups:	keys 1..9
 
 ####Objectives####
 Eat all smaller fish to score one point!
+Progessively larger fish increases the score.
