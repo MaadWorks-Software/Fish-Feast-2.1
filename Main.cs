@@ -114,9 +114,11 @@ namespace FishFeast
 				if (playerFish.IsAlive) {
 					if (playerFish.RightFaced) {		// draw based if player is right 
 														// or left faced
-						sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
+						if (playerFish.GrowthSize > 1) sfcMain.Blit(sfcFishR[5], playerFish.Pos);
+						else sfcMain.Blit(sfcFishR[playerFish.Type], playerFish.Pos);
 					} else {
-						sfcMain.Blit(sfcFishL[playerFish.Type], playerFish.Pos);
+						if (playerFish.GrowthSize > 1) sfcMain.Blit (sfcFishL[6], playerFish.Pos);
+						else sfcMain.Blit(sfcFishL[playerFish.Type], playerFish.Pos);
 					}
 				}
 				else 
@@ -170,10 +172,10 @@ namespace FishFeast
 						                           sfcFishL[computerfish.Type].Height);
 					}
 					if (enemy_rect.IntersectsWith(player_rect)) {
-						if (computerfish.Size < playerFish.Size) {
+						if (computerfish.Size < playerFish.GrowthSize) {
 							AIFish.RemoveAt(i);
 							playerFish.addScore(1);
-						} else if (computerfish.Size > playerFish.Size) {
+						} else if (computerfish.Size > playerFish.GrowthSize) {
 							playerFish.IsAlive = false;
 							
 						}
@@ -185,6 +187,11 @@ namespace FishFeast
 
 				if (timeStopCounter + 4500 < Timer.TicksElapsed) {
 					isTimeStopped = false;
+				}
+				
+				if (powerUpTimer + 4500 < Timer.TicksElapsed) {
+					playerFish.GrowthSize = 1;
+					
 				}
 				
 				if (!playerFish.IsAlive) {
@@ -214,7 +221,7 @@ namespace FishFeast
 				}
 			}
 			if (e.Key == Key.One) {
-				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] > 0 && playerFish.Size > 1) {
+				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] > 0 && playerFish.GrowthSize == 1) {
 					powerUpTimer = Timer.TicksElapsed;
 					playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] -= 1;
 					playerFish.GrowthSize = 2;
