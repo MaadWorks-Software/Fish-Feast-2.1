@@ -182,7 +182,7 @@ namespace FishFeast
 					else sfcMain.Blit(sfcFishL[computerfish.Type], computerfish.Pos);
 				}
 
-				if (timeStopCounter + 2500 < Timer.TicksElapsed) {
+				if (timeStopCounter + 4500 < Timer.TicksElapsed) {
 					isTimeStopped = false;
 				}
 				
@@ -213,7 +213,7 @@ namespace FishFeast
 				}
 			}
 			if (e.Key == Key.One) {
-				
+			
 			}
 			if (e.Key == Key.Two) {
 				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.timestop] > 0 && !isTimeStopped) {
@@ -397,11 +397,13 @@ namespace FishFeast
 			sfcFishL.Add(new Surface("media/fish3.png"));
 			sfcFishL.Add(new Surface("media/fish4.png"));
 			sfcFishL.Add(new Surface("media/DeadPlayerFish.png"));
+			sfcFishL.Add(new Surface("media/playerFish_l_Grow.png"));
 			
 			sfcFishR.Add(new Surface("media/fish1_r.png"));
 			sfcFishR.Add(new Surface("media/fish2_r.png"));
 			sfcFishR.Add(new Surface("media/fish3_r.png"));
 			sfcFishR.Add(new Surface("media/fish4_r.png"));
+			sfcFishR.Add(new Surface("media/playerFish_r_Grow.png"));
 			
 			// Numbers used in score
 			sfcNumber.Add(new Surface("media/0.png"));
