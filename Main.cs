@@ -64,7 +64,12 @@ namespace FishFeast
 			
 			// Setup all graphics and windows
 			// then run it!
-			sfcMain = Video.SetVideoMode(1024,768);
+			try {
+				sfcMain = Video.SetVideoMode(1024, 768);
+			}
+			catch (TypeInitializationException e){
+				Console.WriteLine(e.InnerException.Message.ToString());
+			}
 			
 			loadMedia();
 			
