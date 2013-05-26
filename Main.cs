@@ -32,6 +32,7 @@ namespace FishFeast
 {
 	class MainClass
 	{
+		int[] bob;
 		static Surface sfcMain;
 		static Surface sfcBackground;
 		static Surface sfcLogo;
@@ -229,7 +230,7 @@ namespace FishFeast
 				if (playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] > 0 && playerFish.GrowthSize == 1) {
 					powerUpTimer = Timer.TicksElapsed;
 					playerFish.powerUps[PowerUpItem.PowerUpTypes.growthpill] -= 1;
-					playerFish.GrowthSize = 2;
+					playerFish.GrowthSize = 6;
 				}
 				
 			}
