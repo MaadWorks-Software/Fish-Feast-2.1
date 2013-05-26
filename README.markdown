@@ -16,7 +16,7 @@ Time stop
 Growth Pill works now
 new scoring system which is based on how big the fish is from the smallest
 
-**Future**
+##Future##
 More Power Ups
 Levels
 Bosses at ends of levels
